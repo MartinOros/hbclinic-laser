@@ -247,12 +247,57 @@
 
 	/* Contact form validation */
 	var $contactform = $("#contactForm");
+	var formStartTime = Date.now();
+	var recaptchaSiteKey = ''; // Set this if using reCAPTCHA v3: 'YOUR_SITE_KEY'
+	
+	// Set form timestamp when page loads
+	$(document).ready(function() {
+		$("#form_timestamp").val(formStartTime);
+	});
+	
 	$contactform.validator({focus: false}).on("submit", function (event) {
 		if (!event.isDefaultPrevented()) {
 			event.preventDefault();
-			submitForm();
+			
+			// Bot protection checks
+			if (!validateBotProtection()) {
+				submitMSG(false, "Spam detected. Please try again.");
+				return false;
+			}
+			
+			// If reCAPTCHA v3 is enabled, execute it before submitting
+			if (typeof grecaptcha !== 'undefined' && recaptchaSiteKey) {
+				grecaptcha.ready(function() {
+					grecaptcha.execute(recaptchaSiteKey, {action: 'submit'}).then(function(token) {
+						// Set the token in the form
+						$("#g-recaptcha-response").val(token);
+						// Now submit the form
+						submitForm();
+					});
+				});
+			} else {
+				// Submit without reCAPTCHA
+				submitForm();
+			}
 		}
 	});
+
+	function validateBotProtection(){
+		// Honeypot check - if website field is filled, it's a bot
+		var honeypot = $("#website").val();
+		if (honeypot && honeypot.length > 0) {
+			return false;
+		}
+		
+		// Time-based validation - if form submitted too quickly (less than 3 seconds), likely a bot
+		var currentTime = Date.now();
+		var timeSpent = (currentTime - formStartTime) / 1000; // in seconds
+		if (timeSpent < 3) {
+			return false;
+		}
+		
+		return true;
+	}
 
 	function submitForm(){
 		/* Ajax call to submit form */

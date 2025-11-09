@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="sk">
 <head>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="Awaiken">
+	<meta name="description" content="Kontaktujte HB Clinic v Košiciach. Adresa: Masarykova 17/A, 2. poschodie. Telefón: +421 907 165 735. Otváracie hodiny: Pondelok - Piatok 8:00 - 17:00.">
+	<meta name="keywords" content="kontakt HB Clinic, adresa Košice, telefón laserová epilácia, otváracie hodiny">
+	<meta name="author" content="HB Clinic">
+	<meta name="robots" content="index, follow">
+	<meta name="googlebot" content="index, follow">
+	<!-- Canonical URL -->
+	<link rel="canonical" href="https://hbclinic.sk/kontakt.html">
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://hbclinic.sk/kontakt.html">
+	<meta property="og:title" content="Kontakt - HB Clinic Košice">
+	<meta property="og:description" content="Kontaktujte HB Clinic v Košiciach. Adresa: Masarykova 17/A, 2. poschodie. Telefón: +421 907 165 735.">
+	<meta property="og:image" content="https://hbclinic.sk/images/hb-clinic-logo-resize.png">
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://hbclinic.sk/kontakt.html">
+	<meta property="twitter:title" content="Kontakt - HB Clinic Košice">
+	<meta property="twitter:description" content="Kontaktujte HB Clinic v Košiciach. Adresa: Masarykova 17/A, 2. poschodie. Telefón: +421 907 165 735.">
+	<meta property="twitter:image" content="https://hbclinic.sk/images/hb-clinic-logo-resize.png">
 	<!-- Page Title -->
-    <title>Kontakt - HB Clinic</title>
+    <title>Kontakt - HB Clinic | Košice</title>
 	<!-- Favicon Icon -->
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
 	<!-- Google Fonts Css-->
@@ -32,6 +48,59 @@
 	<link rel="stylesheet" href="css/mousecursor.css">
 	<!-- Main Custom Css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+	<!-- Structured Data (Schema.org) -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "LocalBusiness",
+		"name": "HB Clinic",
+		"image": "https://hbclinic.sk/images/hb-clinic-logo-resize.png",
+		"@id": "https://hbclinic.sk",
+		"url": "https://hbclinic.sk",
+		"telephone": "+421907165735",
+		"email": "info@hbclinic.sk",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Masarykova 17/A, 2. poschodie",
+			"addressLocality": "Košice",
+			"postalCode": "040 01",
+			"addressCountry": "SK"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 48.7206,
+			"longitude": 21.2589
+		},
+		"openingHoursSpecification": {
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": [
+				"Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday",
+				"Friday"
+			],
+			"opens": "08:00",
+			"closes": "17:00"
+		},
+		"priceRange": "$$",
+		"description": "Profesionálna laserová epilácia a estetické ošetrenia v Košiciach. 25+ rokov skúseností.",
+		"areaServed": {
+			"@type": "City",
+			"name": "Košice"
+		}
+	}
+	</script>
+	<!-- Google reCAPTCHA v3 (Optional - Follow official docs: https://developers.google.com/recaptcha/docs/v3) -->
+	<!-- 
+	To enable reCAPTCHA v3:
+	1. Get your keys from https://www.google.com/recaptcha/admin
+	2. Uncomment the script below and replace YOUR_SITE_KEY with your site key
+	3. In js/function.js, set recaptchaSiteKey = 'YOUR_SITE_KEY'
+	4. In form-process.php, set $recaptchaSecret = 'YOUR_SECRET_KEY'
+	
+	<script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
+	-->
 </head>
 <body>
 
@@ -98,6 +167,9 @@
 								<li class="breadcrumb-item active" aria-current="page">Kontakt</li>
 							</ol>
 						</nav>
+						<div class="text-center wow fadeInUp" data-wow-delay="0.2s" style="margin-top: 30px;">
+							<a href="https://hbclinic.sk/rezervacia/" class="btn-default" target="_blank" rel="noopener noreferrer">Rezervácia</a>
+						</div>
 					</div>
 					<!-- Page Header Box End -->
 				</div>
@@ -210,6 +282,17 @@
                         <!-- Contact Form Start -->
                         <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp">
                             <div class="row">
+                                <!-- Honeypot field - hidden from users but visible to bots -->
+                                <div class="form-group col-md-12" style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;">
+                                    <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+                                </div>
+                                
+                                <!-- Timestamp for time-based validation -->
+                                <input type="hidden" name="form_timestamp" id="form_timestamp" value="">
+                                
+                                <!-- reCAPTCHA v3 token (populated by JavaScript) -->
+                                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" value="">
+                                
                                 <div class="form-group col-md-12 mb-4">
                                     <input type="text" name="fname" class="form-control" id="fname" placeholder="Meno" required>
                                     <div class="help-block with-errors"></div>
@@ -225,9 +308,16 @@
                                     <div class="help-block with-errors"></div>
                                 </div>
 
+                                <!-- Optional: reCAPTCHA v3 (invisible) - Uncomment and add your site key if needed -->
+                                <!-- 
+                                <div class="col-lg-12 mb-4">
+                                    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY" data-size="invisible" data-badge="bottomleft"></div>
+                                </div>
+                                -->
+
                                 <div class="col-lg-12">
                                     <div class="contact-form-btn">
-                                        <button type="submit" class="btn-default"><span>Poslať správu</span></button>
+                                        <button type="submit" class="btn-default" id="submitBtn"><span>Poslať správu</span></button>
                                         <div id="msgSubmit" class="h3 hidden"></div>
                                     </div>
                                 </div>
