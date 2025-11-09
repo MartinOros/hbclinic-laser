@@ -51,6 +51,7 @@
 	--text-color				: #69615D;
 	--accent-color				: #D34C7D;
 	--white-color				: #FFFFFF;
+	--custom-color				: #222222;
 	--divider-color				: #CD5F371A;
 	--dark-divider-color		: #FFFFFF1A;
 	--error-color				: rgb(230, 87, 87);
@@ -105,7 +106,7 @@ h6{
 	font-family: var(--accent-font);
 	font-weight: 400;
 	line-height: 1.2em;
-	color: var(--primary-color);
+	color: var(--custom-color);
 }
 
 figure{
@@ -426,7 +427,7 @@ body{
 }
 
 .dark-section .section-title h3{
-	color: var(--white-color);
+	color: var(--custom-color);
 }
 
 .dark-section .section-title h3::before{
@@ -464,7 +465,7 @@ body{
 .dark-section .section-title p,
 .dark-section .section-title h2,
 .dark-section .section-title h1{
-	color: var(--white-color);
+	color: #222222;
 }
 
 .section-btn{
@@ -988,6 +989,11 @@ header.main-header .header-sticky.active{
 
 .hero-review-box ul li:last-child{
 	margin: 0;
+}
+
+.hero-review-box ul li:nth-child(2),
+.hero-review-box ul li:nth-child(4){
+	color: var(--custom-color);
 }
 
 .hero-review-box ul li img{
@@ -4343,6 +4349,92 @@ header.main-header .header-sticky.active{
 	transform: scale(1);
 }
 
+/************************************/
+/***   Pricing Page css           ***/
+/************************************/
+
+.page-pricing{
+	padding: 100px 0 70px;
+}
+
+.pricing-category{
+	margin-bottom: 60px;
+}
+
+.pricing-category-title{
+	font-size: 32px;
+	font-weight: 600;
+	color: var(--custom-color);
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid var(--accent-color);
+}
+
+.pricing-category-subtitle{
+	font-size: 20px;
+	font-weight: 500;
+	color: var(--text-color);
+	margin-bottom: 30px;
+	margin-top: -10px;
+}
+
+.pricing-list{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.pricing-item{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 30px;
+	background: var(--secondary-color);
+	border-radius: 15px;
+	transition: all 0.3s ease;
+}
+
+.pricing-item:hover{
+	background: var(--primary-color);
+	transform: translateX(5px);
+}
+
+.pricing-item-name{
+	flex: 1;
+	color: var(--text-color);
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+.pricing-item-price{
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--accent-color);
+	margin-left: 20px;
+	white-space: nowrap;
+}
+
+.pricing-appointment-box{
+	background: var(--secondary-color);
+	border-radius: 20px;
+	padding: 50px;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.pricing-appointment-box h3{
+	font-size: 28px;
+	color: var(--custom-color);
+	margin-bottom: 20px;
+}
+
+.pricing-appointment-box p{
+	color: var(--text-color);
+	font-size: 16px;
+	line-height: 1.8;
+	margin-bottom: 30px;
+}
+
 .contact-info-item .icon-box img{
 	position: relative;
 	max-width: 26px;
@@ -5566,6 +5658,42 @@ header.main-header .header-sticky.active{
 		padding: 50px 0 25px;
 	}
 
+	.page-pricing{
+		padding: 50px 0 35px;
+	}
+
+	.pricing-category-title{
+		font-size: 24px;
+	}
+
+	.pricing-category-subtitle{
+		font-size: 18px;
+	}
+
+	.pricing-item{
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 15px 20px;
+		gap: 10px;
+	}
+
+	.pricing-item-name{
+		font-size: 14px;
+	}
+
+	.pricing-item-price{
+		margin-left: 0;
+		font-size: 18px;
+	}
+
+	.pricing-appointment-box{
+		padding: 30px 20px;
+	}
+
+	.pricing-appointment-box h3{
+		font-size: 24px;
+	}
+
 	.contact-us-content .section-title{
 		margin-bottom: 30px;
 	}
@@ -6243,6 +6371,38 @@ header.main-header .header-sticky.active{
 
 	.contact-info-item{
 		width: 100%;
+	}
+
+	.page-pricing{
+		padding: 50px 0 35px;
+	}
+
+	.pricing-category{
+		margin-bottom: 40px;
+	}
+
+	.pricing-category-title{
+		font-size: 26px;
+	}
+
+	.pricing-item{
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 15px 20px;
+		gap: 10px;
+	}
+
+	.pricing-item-name{
+		font-size: 15px;
+	}
+
+	.pricing-item-price{
+		margin-left: 0;
+		font-size: 18px;
+	}
+
+	.pricing-appointment-box{
+		padding: 30px 20px;
 	}
 
 	.contact-info-item .icon-box{
