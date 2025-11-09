@@ -656,7 +656,7 @@ header.main-header .header-sticky.active{
 	font-family: var(--accent-font);
 	font-size: 20px;
 	line-height: normal;
-	color: var(--primary-color);
+	color: var(--custom-color);
 	transition: all 0.3s ease-in-out;
 }
 
@@ -2172,6 +2172,10 @@ header.main-header .header-sticky.active{
 	margin-bottom: 60px;
 }
 
+.main-footer.bg-section.dark-section{
+	background-color: var(--primary-color);
+}
+
 .footer-header{
 	display: flex;
 	flex-wrap: wrap;
@@ -2226,6 +2230,10 @@ header.main-header .header-sticky.active{
 	filter: brightness(1) invert(1);
 }
 
+.footer-newsletter-form .btn-default:hover{
+	color: var(--accent-color);
+}
+
 .about-footer{
     margin-right: 70px;
 }
@@ -2241,10 +2249,11 @@ header.main-header .header-sticky.active{
 
 .about-footer-content{
     margin-bottom: 30px;
+    color: var(--custom-color);
 }
 
 .about-footer-content p{
-    color: var(--white-color);
+    color: var(--custom-color);
     margin-bottom: 0;
 }
 
@@ -2266,8 +2275,8 @@ header.main-header .header-sticky.active{
 .footer-social-links ul li a{
 	width: 38px;
 	height: 38px;
-	color: var(--white-color);
-    border: 1px solid var(--white-color);
+	color: var(--accent-color);
+    border: 1px solid var(--accent-color);
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -2297,7 +2306,7 @@ header.main-header .header-sticky.active{
 
 .footer-links h3{
     font-size: 22px;
-    color: var(--white-color);
+    color: var(--accent-color);
     text-transform: capitalize;
     margin-bottom: 20px;
 }
@@ -2313,7 +2322,7 @@ header.main-header .header-sticky.active{
 
 .footer-links ul li{
 	display: inline-block;
-    color: var(--white-color);
+    color: var(--custom-color);
 	text-transform: capitalize;
 	line-height: 1.6em;
 }
@@ -2358,7 +2367,7 @@ header.main-header .header-sticky.active{
 
 .footer-contact-item ul li i{
 	font-size: 16px;
-	color: var(--white-color);
+	color: var(--accent-color);
 	margin-right: 10px;
 }
 
@@ -2373,7 +2382,7 @@ header.main-header .header-sticky.active{
 }
 
 .footer-copyright-text p{
-	color: var(--white-color);
+	color: var(--custom-color);
 	margin-bottom: 0;
 }
 
@@ -2385,7 +2394,7 @@ header.main-header .header-sticky.active{
 
 .footer-privacy-policy ul li{
 	position: relative;
-    color: var(--white-color);
+    color: var(--custom-color);
 	text-transform: capitalize;
 	display: inline-block;
 	margin-right: 10px;
@@ -2403,7 +2412,7 @@ header.main-header .header-sticky.active{
 	top: 0;
 	right: 0;
 	bottom: 0;
-	color: var(--white-color);
+	color: var(--accent-color);
 }
 
 .footer-privacy-policy ul li:last-child{
@@ -3006,7 +3015,7 @@ header.main-header .header-sticky.active{
     font-size: 22px;
     font-weight: 400;
     line-height: 1.4em;
-    color: var(--primary-color);
+    color: var(--custom-color);
     padding-right: 30px;
     transition: all 0.3s ease-in-out;
 }
@@ -3024,7 +3033,7 @@ header.main-header .header-sticky.active{
     right: 0;
     top: 0;    
     font-size: 18px;
-    color: var(--primary-color);
+    color: var(--custom-color);
     transition: all 0.3s ease-in-out;
 }
 
@@ -4301,6 +4310,10 @@ header.main-header .header-sticky.active{
 	padding: 100px 0 50px;
 }
 
+.page-content{
+	padding: 100px 0 50px;
+}
+
 .contact-us-content .section-title{
 	margin-bottom: 0;
 }
@@ -4379,8 +4392,8 @@ header.main-header .header-sticky.active{
 }
 
 .pricing-list{
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 15px;
 }
 
@@ -4445,6 +4458,23 @@ header.main-header .header-sticky.active{
 	font-size: 22px;
 	text-transform: capitalize;
 	margin-bottom: 5px;
+}
+
+.contact-info-item-wide{
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
+	padding: 20px 30px;
+	width: 100%;
+}
+
+.contact-info-item-wide .icon-box{
+	margin-bottom: 0;
+	flex-shrink: 0;
+}
+
+.contact-info-item-wide .contact-info-content{
+	flex: 1;
 }
 
 .contact-info-content p{
@@ -5658,6 +5688,10 @@ header.main-header .header-sticky.active{
 		padding: 50px 0 25px;
 	}
 
+	.page-content{
+		padding: 50px 0 25px;
+	}
+
 	.page-pricing{
 		padding: 50px 0 35px;
 	}
@@ -5668,6 +5702,10 @@ header.main-header .header-sticky.active{
 
 	.pricing-category-subtitle{
 		font-size: 18px;
+	}
+
+	.pricing-list{
+		grid-template-columns: 1fr;
 	}
 
 	.pricing-item{
@@ -6383,6 +6421,10 @@ header.main-header .header-sticky.active{
 
 	.pricing-category-title{
 		font-size: 26px;
+	}
+
+	.pricing-list{
+		grid-template-columns: 1fr;
 	}
 
 	.pricing-item{
