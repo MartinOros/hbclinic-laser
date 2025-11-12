@@ -271,9 +271,13 @@ body{
 	opacity: 1;
 }
 
+.btn-default:hover{
+	color: var(--accent-color);
+}
+
 .btn-default.btn-highlighted:hover{
 	background: transparent;
-	color: var(--primary-color);
+	color: var(--accent-color);
 }
 
 .btn-default.btn-highlighted::before{
@@ -409,7 +413,7 @@ body{
 	letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent-color);
-	padding-left: 34px;
+	padding-left: 0;
     margin-bottom: 10px;
 }
 
@@ -426,6 +430,7 @@ body{
     height: 24px;
 	filter: brightness(0) saturate(100%) invert(27%) sepia(89%) saturate(1352%) hue-rotate(310deg) brightness(89%) contrast(88%);
 	transition: all 0.3s ease-in-out;
+	display: none;
 }
 
 .section-title:hover h3::before{
@@ -1015,7 +1020,6 @@ header.main-header .header-sticky.active{
 	background: url('../images/hero-image-bg-star.svg') no-repeat;
 	background-position: center bottom;
 	background-size: contain;
-	height: 100%;
 	align-content: end;
 	text-align: center;
 }
@@ -1023,7 +1027,11 @@ header.main-header .header-sticky.active{
 .hero-image img{
 	margin-bottom: -180px;
     margin-top: -120px;
-    max-width: initial;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 /************************************/
@@ -1111,7 +1119,7 @@ header.main-header .header-sticky.active{
 
 .about-experience-list,
 .about-experience-image{
-	width: calc(50% - 15px);
+	
 }
 
 .about-experience-list ul{
@@ -1247,6 +1255,22 @@ header.main-header .header-sticky.active{
 	transform: translateY(-5px);
 }
 
+.service-item.akcie{
+	background-color: var(--primary-color);
+	color: var(--accent-color);
+}
+
+.service-item.akcie .service-content-title h2 a,
+.service-item.akcie .service-content p,
+.service-item.akcie .service-content-title h2{
+	color: var(--accent-color);
+}
+
+.service-item.akcie:hover{
+	border-color: var(--primary-color);
+	box-shadow: 0 8px 30px rgba(247, 228, 231, 0.3);
+}
+
 .service-content{
 	margin-bottom: 30px;
 }
@@ -1318,7 +1342,7 @@ header.main-header .header-sticky.active{
 }
 
 .section-footer-text p a{
-	color: var(--primary-color);
+	color: var(--accent-color);
 	font-weight: 600;
 	text-transform: capitalize;
 	text-decoration: underline;
@@ -1546,8 +1570,6 @@ header.main-header .header-sticky.active{
 
 .case-study-image img{
     width: 100%;
-    aspect-ratio: 1 / 0.967;
-    object-fit: cover;
 	transition: all 0.4s ease-in-out;
 }
 
@@ -3182,6 +3204,10 @@ header.main-header .header-sticky.active{
 	background: var(--secondary-color);
 }
 
+.page-services .service-item.akcie{
+	background-color: var(--primary-color);
+}
+
 /************************************/
 /***   19. Services Single css    ***/
 /************************************/
@@ -4520,11 +4546,16 @@ header.main-header .header-sticky.active{
 	background: var(--secondary-color);
 	border-radius: 15px;
 	transition: all 0.3s ease;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
 }
 
 .pricing-item:hover{
 	background: var(--primary-color);
 	transform: translateX(5px);
+	text-decoration: none;
+	color: inherit;
 }
 
 .pricing-item-name{
