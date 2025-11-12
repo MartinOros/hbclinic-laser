@@ -10,21 +10,51 @@
 	});
 
 	/* Sticky Header */	
-	if($('.active-sticky-header').length){
+	if($('header .header-sticky').length){
+		// Set header height on load and resize
+		function setHeaderHeight(){
+	 		$("header.main-header").css("height", $('header .header-sticky').outerHeight());
+		}
+		
+		// Track previous scroll position for direction detection
+		var lastScrollTop = 0;
+		var scrollThreshold = 100; // Minimum scroll distance to trigger hide/show
+		
+		// Initialize header height on page load
+		$(document).ready(function(){
+			setHeaderHeight();
+			// Add active class immediately to ensure styling is applied
+			$("header .header-sticky").addClass("active");
+			lastScrollTop = $(window).scrollTop();
+		});
+		
 		$window.on('resize', function(){
 			setHeaderHeight();
 		});
-
-		function setHeaderHeight(){
-	 		$("header.main-header").css("height", $('header .header-sticky').outerHeight());
-		}	
 	
 		$window.on("scroll", function() {
 			var fromTop = $(window).scrollTop();
 			setHeaderHeight();
-			var headerHeight = $('header .header-sticky').outerHeight()
-			$("header .header-sticky").toggleClass("hide", (fromTop > headerHeight + 100));
-			$("header .header-sticky").toggleClass("active", (fromTop > 600));
+			
+			// Always keep active class for styling
+			$("header .header-sticky").addClass("active");
+			
+			// Determine scroll direction with threshold to prevent flickering
+			var scrollDifference = Math.abs(fromTop - lastScrollTop);
+			
+			if (fromTop < scrollThreshold) {
+				// Near top of page - always show header
+				$("header .header-sticky").removeClass("hide");
+			} else if (fromTop > lastScrollTop && scrollDifference > 5) {
+				// Scrolling down - hide header (only if scrolled more than 5px)
+				$("header .header-sticky").addClass("hide");
+			} else if (fromTop < lastScrollTop && scrollDifference > 5) {
+				// Scrolling up - show header (only if scrolled more than 5px)
+				$("header .header-sticky").removeClass("hide");
+			}
+			
+			// Update last scroll position
+			lastScrollTop = fromTop <= 0 ? 0 : fromTop; // For mobile or negative scrolling
 		});
 	}	
 	
