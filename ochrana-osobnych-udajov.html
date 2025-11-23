@@ -32,6 +32,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 	<!-- Bootstrap Css -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<!-- SlickNav Css -->
@@ -54,78 +57,40 @@
     <!-- Preloader Start -->
 	<div class="preloader">
 		<div class="loading-container">
-			<div class="loading"></div>
-			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+			<div id="loading-icon"><img src="images/hb-clinic-logo (1).png" alt="HB Clinic Logo"></div>
 		</div>
 	</div>
 	<!-- Preloader End -->
 
-    <!-- Topbar Start -->
-	<div class="topbar">
-		<div class="container-fluid">
-			<div class="row align-items-center">
-				<div class="col-lg-6">
-					<div class="topbar-info">
-						<ul>
-							<li><i class="fa-solid fa-phone"></i><a href="tel:+421907165735">+421 907 165 735</a></li>
-							<li><i class="fa-solid fa-envelope"></i><a href="mailto:info@hbclinic.sk">info@hbclinic.sk</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="topbar-info topbar-right">
-						<ul>
-							<li><i class="fa-solid fa-clock"></i>Pondelok - Piatok: 8:00 – 17:00</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Topbar End -->
-
     <!-- Header Start -->
 	<header class="main-header">
-		<div class="header-sticky bg-section">
-			<nav class="navbar navbar-expand-lg">
-				<div class="container-fluid">
-					<!-- Logo Start -->
-					<a class="navbar-brand" href="./">
-						<img src="images/hb-clinic-logo-resize.png" alt="Logo">
-					</a>
-					<!-- Logo End -->
-
-					<!-- Main Menu Start -->
-					<div class="collapse navbar-collapse main-menu">
-                        <div class="nav-menu-wrapper">
-                            <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item"><a class="nav-link" href="./">Domov</a></li>                                
-                                <li class="nav-item"><a class="nav-link" href="o-nas.html">O nás</a></li>
-                                <li class="nav-item"><a class="nav-link" href="sluzby.html">Služby</a></li>
-                                <li class="nav-item"><a class="nav-link" href="cennik.html">Cenník</a></li>
-                                <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>                         
-                                <li class="nav-item highlighted-menu"><a class="nav-link" href="https://hbclinic.sk/rezervacia/" target="_blank" rel="noopener noreferrer">Rezervácia</a></li>                         
-                            </ul>
-                        </div>
-                        
-                        <!-- Header Contact Btn Start -->
-                        <div class="header-contact-btn">
-                            <a href="tel:+421907165735" class="header-contact-now"><i class="fa-solid fa-phone"></i>+421 907 165 735</a>
-                            <a href="https://hbclinic.sk/rezervacia/" class="btn-default" target="_blank" rel="noopener noreferrer">Rezervácia</a>
-                        </div>
-                        <!-- Header Contact Btn End -->
-					</div>
-					<!-- Main Menu End -->
-					<div class="navbar-toggle"></div>
-				</div>
-			</nav>
-			<div class="responsive-menu"></div>
+		<div class="header-sticky custom-navbar" style="background: transparent; border: none;">
 		</div>
 	</header>
 	<!-- Header End -->
 
     <!-- Page Header Start -->
 	<div class="page-header bg-section dark-section">
+		<!-- Hamburger Menu Button -->
+		<button class="custom-hamburger hero-hamburger" id="customHamburger" aria-label="Menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<!-- Custom Menu Overlay -->
+		<div class="custom-menu-overlay" id="customMenuOverlay">
+			<nav class="custom-menu">
+				<ul class="custom-menu-list">
+					<li><a href="./">Domov</a></li>
+					<li><a href="o-nas.html">O nás</a></li>
+					<li><a href="sluzby.html">Služby</a></li>
+					<li><a href="cennik.html">Cenník</a></li>
+					<li><a href="kontakt.html">Kontakt</a></li>
+					<li><a href="https://hbclinic.sk/rezervacia/" target="_blank" rel="noopener noreferrer">Rezervácia Termínu</a></li>
+				</ul>
+			</nav>
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -138,7 +103,7 @@
 								<li class="breadcrumb-item active" aria-current="page">Ochrana osobných údajov</li>
 							</ol>
 						</nav>
-						<div class="text-center" style="margin-top: 30px;">
+						<div style="margin-top: 30px;">
 							<a href="https://hbclinic.sk/rezervacia/" class="btn-default" target="_blank" rel="noopener noreferrer">Rezervácia</a>
 						</div>
 					</div>
@@ -596,7 +561,7 @@
                     <div class="about-footer">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo">
-                            <img src="images/hb-clinic-logo-resize.png" alt="">
+                            <img src="images/hb-clinic-logo (1).png" alt="">
                         </div>
                         <!-- Footer Logo End -->
 

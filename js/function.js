@@ -413,5 +413,30 @@
 			fixedContentPos: true
 		});
 	}
+
+	/* Custom Hamburger Menu for Index Page */
+	if ($('#customHamburger').length) {
+		$('#customHamburger').on('click', function(){
+			$(this).toggleClass('active');
+			$('#customMenuOverlay').toggleClass('active');
+			$('body').toggleClass('menu-open');
+		});
+
+		// Close menu when clicking on overlay
+		$('#customMenuOverlay').on('click', function(e){
+			if ($(e.target).is('#customMenuOverlay')) {
+				$('#customHamburger').removeClass('active');
+				$('#customMenuOverlay').removeClass('active');
+				$('body').removeClass('menu-open');
+			}
+		});
+
+		// Close menu when clicking on a link
+		$('.custom-menu-list a').on('click', function(){
+			$('#customHamburger').removeClass('active');
+			$('#customMenuOverlay').removeClass('active');
+			$('body').removeClass('menu-open');
+		});
+	}
 	
 })(jQuery);

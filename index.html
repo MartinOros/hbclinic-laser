@@ -27,11 +27,16 @@
 	<!-- Page Title -->
     <title>HB Clinic - Laserová epilácia a estetické ošetrenia | Košice</title>
 	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+	<link rel="apple-touch-icon" href="images/favicon.png">
 	<!-- Google Fonts Css-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 	<!-- Bootstrap Css -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<!-- SlickNav Css -->
@@ -97,78 +102,41 @@
     <!-- Preloader Start -->
 	<div class="preloader">
 		<div class="loading-container">
-			<div class="loading"></div>
-			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+			<div id="loading-icon"><img src="images/hb-clinic-logo (1).png" alt="HB Clinic Logo"></div>
 		</div>
 	</div>
 	<!-- Preloader End -->
 
-    <!-- Topbar Start -->
-	<div class="topbar">
-		<div class="container-fluid">
-			<div class="row align-items-center">
-				<div class="col-lg-6">
-					<div class="topbar-info">
-						<ul>
-							<li><i class="fa-solid fa-phone"></i><a href="tel:+421907165735">+421 907 165 735</a></li>
-							<li><i class="fa-solid fa-envelope"></i><a href="mailto:info@hbclinic.sk">info@hbclinic.sk</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="topbar-info topbar-right">
-						<ul>
-							<li><i class="fa-solid fa-clock"></i>Pondelok - Piatok: 8:00 – 17:00</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Topbar End -->
-
     <!-- Header Start -->
 	<header class="main-header">
-		<div class="header-sticky bg-section">
-			<nav class="navbar navbar-expand-lg">
-				<div class="container-fluid">
-					<!-- Logo Start -->
-					<a class="navbar-brand" href="./">
-						<img src="images/hb-clinic-logo-resize.png" alt="Logo">
-					</a>
-					<!-- Logo End -->
-
-					<!-- Main Menu Start -->
-					<div class="collapse navbar-collapse main-menu">
-                        <div class="nav-menu-wrapper">
-                            <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item"><a class="nav-link" href="./">Domov</a></li>                                
-                                <li class="nav-item"><a class="nav-link" href="o-nas.html">O nás</a></li>
-                                <li class="nav-item"><a class="nav-link" href="sluzby.html">Služby</a></li>
-                                <li class="nav-item"><a class="nav-link" href="cennik.html">Cenník</a></li>
-                                <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>                         
-                                <li class="nav-item highlighted-menu"><a class="nav-link" href="https://hbclinic.sk/rezervacia/" target="_blank" rel="noopener noreferrer">Rezervácia Termínu</a></li>                         
-                            </ul>
-                        </div>
-                        
-                        <!-- Header Contact Btn Start -->
-                        <div class="header-contact-btn">
-                            <a href="tel:+421907165735" class="header-contact-now"><i class="fa-solid fa-phone"></i>+421 907 165 735</a>
-                            <a href="https://hbclinic.sk/rezervacia/" class="btn-default" target="_blank" rel="noopener noreferrer">Rezervácia Termínu</a>
-                        </div>
-                        <!-- Header Contact Btn End -->
-					</div>
-					<!-- Main Menu End -->
-					<div class="navbar-toggle"></div>
-				</div>
-			</nav>
-			<div class="responsive-menu"></div>
+		<div class="header-sticky custom-navbar" style="background: transparent; border: none;">
 		</div>
 	</header>
 	<!-- Header End -->
 
     <!-- Hero Section Start -->
     <div class="hero bg-section dark-section">
+		<!-- Hamburger Menu Button -->
+		<button class="custom-hamburger hero-hamburger" id="customHamburger" aria-label="Menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<!-- Custom Menu Overlay -->
+		<div class="custom-menu-overlay" id="customMenuOverlay">
+			<nav class="custom-menu">
+				<ul class="custom-menu-list">
+					<li><a href="./">Domov</a></li>
+					<li><a href="o-nas.html">O nás</a></li>
+					<li><a href="sluzby.html">Služby</a></li>
+					<li><a href="cennik.html">Cenník</a></li>
+					<li><a href="kontakt.html">Kontakt</a></li>
+					<li><a href="https://hbclinic.sk/rezervacia/" target="_blank" rel="noopener noreferrer">Rezervácia Termínu</a></li>
+				</ul>
+			</nav>
+		</div>
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -176,7 +144,7 @@
                     <div class="hero-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">ODBORNE. BEZBOLESTNE. TRVALO.</h3>
+                            
                             <h1 class="text-anime-style-3" data-cursor="-opaque">Zažite dotyk hladkej pokožky</h1>
                             <p class="wow fadeInUp" data-wow-delay="0.2s">Zažite hladkú pokožku bez chĺpkov s najmodernejšou laserovou epiláciou.
                                 HB Clinic ponúka bezpečné ošetrenia pre ženy aj mužov na klinikách v Košiciach, Michalovciach a Poprade.</p>
@@ -187,7 +155,7 @@
                         <div class="hero-body wow fadeInUp" data-wow-delay="0.4s">
                             <!-- Hero Button Start -->
                             <div class="hero-btn">
-                                <a href="https://hbclinic.sk/rezervacia/" class="btn-default btn-highlighted" target="_blank" rel="noopener noreferrer">Rezervácia Termínu</a>                                
+                                <a href="https://hbclinic.sk/rezervacia/" class="btn-default" target="_blank" rel="noopener noreferrer">Rezervácia Termínu</a>                                
                             </div>
                             <!-- Hero Button End -->
 
@@ -203,7 +171,7 @@
                         </div>
                         <!-- Hero Content Body End -->    
                         
-                        <!-- Hero Review Box Start -->
+                        <!-- Hero Review Box Start 
                         <div class="hero-review-box wow fadeInUp" data-wow-delay="0.6s">
                             <ul>
                                 <li><img src="images/icon-google.svg" alt=""></li>
@@ -217,6 +185,7 @@
                                 <li>(79+ hodnotení)</li>
                             </ul>
                         </div>
+                        -->
                         <!-- Hero Review Box End -->
                     </div>
                     <!-- Hero Content End -->
@@ -225,7 +194,7 @@
                 <div class="col-lg-6">
                     <!-- Hero Image Start -->
                     <div class="hero-image">
-                        <img src="images/elysion.png" alt="">
+                        <img src="images/hb-clinic-logo (1).png" alt="Logo">
                     </div>
                     <!-- Hero Image End -->
                 </div>
@@ -267,7 +236,7 @@
                     <div class="about-us-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">HB Clinic</h3>
+
                             <h2 class="text-anime-style-3" data-cursor="-opaque">Krása pod dohľadom odborníkov</h2>
                             <p class="wow fadeInUp" data-wow-delay="0.2s">V HB Clinic ponúkame profesionálne laserové ošetrenia s trvalým účinkom.
                                 Bezpečné a bezbolestné odstránenie chĺpkov pre ženy aj mužov s individuálnym prístupom.</p>
@@ -305,11 +274,11 @@
 
                             <!-- About Contact Button Start -->
                             <div class="about-us-btn">
-                                <a href="https://hbclinic.sk/rezervacia/" class="btn-default">Rezervácia Termínu</a>
+                                <a href="https://hbclinic.sk/rezervacia/" class="btn-default">Chcem Zmenu</a>
                             </div>
                             <!-- About Contact Button End -->
                         </div>
-                        <!-- About Us Body End -->
+                        <!-- About Us Body End -->  
                     </div>
                     <!-- Hero Content Box End -->
                 </div>
@@ -325,8 +294,7 @@
                 <div class="col-lg-12">
                     <!-- Section Title Start -->
                     <div class="section-title section-title-center">
-                        <h3 class="wow fadeInUp">SLUŽBY</h3>
-                        <h2 class="text-anime-style-3" data-cursor="-opaque">Ponuka  <br> Laserovej Epilácie</h2>
+                        <h2 class="text-anime-style-3" data-cursor="-opaque">Ošetrenia Laserovej Epilácie</h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -490,7 +458,7 @@
                     <div class="what-we-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">ČO ROBÍME</h3>
+
                             <h2 class="text-anime-style-3" data-cursor="-opaque">Sebavedomá krása</h2>
                             <p class="wow fadeInUp" data-wow-delay="0.2s">Spájame medicínsku presnosť, moderné technológie a estetický cit.
                                 Pomáhame našim klientom cítiť sa sebavedomo vďaka individuálne prispôsobeným ošetreniam, ktoré prinášajú trvalé a prirodzené výsledky.</p>
@@ -782,7 +750,7 @@
                     <div class="about-footer">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo">
-                            <img src="images/hb-clinic-logo-resize.png" alt="">
+                            <img src="images/hb-clinic-logo (1).png" alt="">
                         </div>
                         <!-- Footer Logo End -->
 
