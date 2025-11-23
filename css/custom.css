@@ -917,7 +917,8 @@ body.menu-open{
 .case-study-btn .btn-default::before,
 .how-work-btn .btn-default::before,
 .footer-newsletter-form .btn-default::before,
-.our-services .btn-default::before{
+.our-services .btn-default::before,
+.our-services-btn .btn-default::before{
 	display: none;
 }
 
@@ -947,6 +948,23 @@ body.menu-open{
 }
 
 .about-us-btn .btn-default:hover{
+	background: #4B484B;
+	color: #FFFFFF;
+}
+
+.our-services-btn .btn-default{
+	background: #302E30;
+	color: #FFFFFF;
+	border-radius: 12px;
+	text-transform: uppercase;
+}
+
+.our-services-btn .btn-default::after{
+	background: #302E30;
+	border-radius: 12px;
+}
+
+.our-services-btn .btn-default:hover{
 	background: #4B484B;
 	color: #FFFFFF;
 }
@@ -1662,7 +1680,19 @@ body.menu-open{
 
 .what-we-do{
 	padding: 100px 0;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(247, 228, 231, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(135deg, rgba(247, 228, 231, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(247, 228, 231, 0.15) 100%);
+	width: 100%;
+	max-width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	border-radius: 0;
+}
+
+.what-we-do .container{
+	padding-left: 40px;
+	padding-right: 40px;
+	max-width: 1300px;
+	margin: 0 auto;
 }
 
 .what-we-image-1{
@@ -1828,7 +1858,40 @@ body.menu-open{
 
 .case-study{
 	padding: 100px 0 70px;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(211, 76, 125, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(135deg, rgba(34, 34, 34, 0.02) 0%, rgba(211, 76, 125, 0.08) 50%, rgba(34, 34, 34, 0.02) 100%);
+	width: 100%;
+	max-width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	border-radius: 0;
+	position: relative;
+}
+
+.case-study::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url('../images/diamanty.png') no-repeat center center;
+	background-size: cover;
+	opacity: 0.03;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.case-study .container{
+	position: relative;
+	z-index: 1;
+	padding-left: 40px;
+	padding-right: 40px;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.case-study.bg-section{
+	border-radius: 0 !important;
 }
 
 .case-study-content{
@@ -2053,7 +2116,36 @@ body.menu-open{
 
 .how-it-work{
 	padding: 100px 0;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(211, 76, 125, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(135deg, rgba(252, 244, 241, 0.3) 0%, rgba(247, 228, 231, 0.2) 50%, rgba(252, 244, 241, 0.3) 100%);
+	width: 100%;
+	max-width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	border-radius: 0;
+	position: relative;
+}
+
+.how-it-work::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url('../images/diamanty.png') no-repeat center center;
+	background-size: cover;
+	opacity: 0.05;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.how-it-work .container{
+	position: relative;
+	z-index: 1;
+	padding-left: 40px;
+	padding-right: 40px;
+	max-width: 1300px;
+	margin: 0 auto;
 }
 
 .how-work-content{
@@ -5568,6 +5660,11 @@ body.menu-open{
 		padding: 50px 0;
 	}
 
+	.what-we-do .container{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
 	.what-we-btn{
 		margin-top: 30px;
 	}
@@ -5602,6 +5699,11 @@ body.menu-open{
 
 	.case-study{
 		padding: 50px 0 20px;
+	}
+
+	.case-study .container{
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
 	.case-study-image img{
@@ -5652,6 +5754,11 @@ body.menu-open{
 
 	.how-it-work{
 		padding: 50px 0;
+	}
+
+	.how-it-work .container{
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
 	.how-work-content{
