@@ -469,6 +469,15 @@ body{
 	color: #222222;
 }
 
+.main-footer.dark-section .section-title h2,
+.main-footer.dark-section .section-title h1{
+	color: #FFFFFF;
+}
+
+.main-footer.dark-section .section-title p{
+	color: rgba(255, 255, 255, 0.8);
+}
+
 .section-btn{
 	text-align: right;
 }
@@ -2815,12 +2824,12 @@ body.menu-open{
 /************************************/
 
 .main-footer{
-	background-image: url('../images/footer-bg-shape.svg');
+	background-image: none;
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-size: 100% auto;
 	padding: 80px 0 0;
-	margin-bottom: 60px;
+	margin-bottom: 0;
 	width: 100%;
 	max-width: 100%;
 	margin-left: 0;
@@ -2829,7 +2838,7 @@ body.menu-open{
 }
 
 .main-footer.bg-section.dark-section{
-	background-color: #F7F5F4;
+	background-color: #2A2A2A;
 }
 
 .footer-header{
@@ -2837,7 +2846,7 @@ body.menu-open{
 	flex-wrap: wrap;
 	align-items: center;
 	gap: 20px 30px;
-	border-bottom: 1px solid var(--dark-divider-color);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	margin-bottom: 60px;
 	padding-bottom: 60px;
 }
@@ -2905,11 +2914,11 @@ body.menu-open{
 
 .about-footer-content{
     margin-bottom: 30px;
-    color: var(--custom-color);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .about-footer-content p{
-    color: var(--custom-color);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0;
 }
 
@@ -2962,7 +2971,7 @@ body.menu-open{
 
 .footer-links h3{
     font-size: 22px;
-    color: #222222;
+    color: #FFFFFF;
     text-transform: capitalize;
     margin-bottom: 20px;
 }
@@ -2978,7 +2987,7 @@ body.menu-open{
 
 .footer-links ul li{
 	display: inline-block;
-    color: var(--custom-color);
+    color: rgba(255, 255, 255, 0.7);
 	text-transform: capitalize;
 	line-height: 1.6em;
 }
@@ -3032,13 +3041,13 @@ body.menu-open{
 	align-items: center;
 	justify-content: space-between;
 	gap: 20px;
-	border-top: 1px solid var(--dark-divider-color);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
 	margin-top: 50px;
-	padding: 50px 0;
+	padding: 50px 0 0 0;
 }
 
 .footer-copyright-text p{
-	color: var(--text-color);
+	color: rgba(255, 255, 255, 0.6);
 	margin-bottom: 0;
 }
 
