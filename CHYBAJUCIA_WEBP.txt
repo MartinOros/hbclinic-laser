@@ -1,0 +1,80 @@
+===========================================
+PNG OBRÁZKY BEZ WEBP VERZIE - EŠTE CHÝBAJÚ
+===========================================
+
+⚠️ Tieto PNG obrázky sa ešte používajú a nemajú WebP verziu:
+
+═══════════════════════════════════════════
+🔥 KRITICKÉ - VEĽKÉ OBRÁZKY (priorita 1):
+═══════════════════════════════════════════
+
+1.  lica.png (1.6 MB) ⚠️ DÔLEŽITÉ
+    - Používa sa v: index.html, sluzby.html
+    
+2.  stehna.png (1.2 MB) ⚠️ DÔLEŽITÉ
+    - Používa sa v: sluzby.html
+    
+3.  ramena.png (1.2 MB) ⚠️ DÔLEŽITÉ
+    - Používa sa v: sluzby.html
+    
+4.  plecia.png (1.2 MB) ⚠️ DÔLEŽITÉ
+    - Používa sa v: sluzby.html
+    
+5.  kontakt-banner.png (612 KB)
+    - Používa sa v: kontakt.html
+    
+6.  predkolenia.png (664 KB)
+    - Používa sa v: sluzby.html
+
+═══════════════════════════════════════════
+📸 MENŠIE OBRÁZKY (priorita 2):
+═══════════════════════════════════════════
+
+7.  imtim_bikiny.png (105 KB)
+    - Používa sa v: sluzby.html
+    
+8.  tvar_cela.png (129 KB)
+    - Používa sa v: sluzby.html
+    
+9.  predlaktie.png (101 KB)
+    - Používa sa v: sluzby.html
+    
+10. ruky_cele.png (80 KB)
+    - Používa sa v: sluzby.html
+
+═══════════════════════════════════════════
+🎨 LOGO A FAVICON (môžu zostať PNG):
+═══════════════════════════════════════════
+
+✅ hb-clinic-logo (1).png (15 KB) - Logo, môže zostať PNG
+✅ favicon.png (11 KB) - Favicon, musí zostať PNG
+✅ hb-clinic-logo-resize.png - Meta tagy, môže zostať PNG
+✅ testimonials-bg-shape.png - CSS background (ak existuje)
+
+═══════════════════════════════════════════
+📊 SÚHRN:
+═══════════════════════════════════════════
+
+• KRITICKÉ (priorita 1): 6 súborov (~6.5 MB)
+• MENŠIE (priorita 2): 4 súbory (~0.4 MB)
+• LOGO/FAVICON: 4 súbory (môžu zostať PNG)
+
+CELKOM: 10 PNG súborov potrebuje WebP verziu
+
+═══════════════════════════════════════════
+💡 ODORÚČANIE:
+═══════════════════════════════════════════
+
+Začnite s KRITICKÝMI obrázkami (priorita 1):
+- lica.png (1.6 MB)
+- stehna.png (1.2 MB)
+- ramena.png (1.2 MB)
+- plecia.png (1.2 MB)
+- kontakt-banner.png (612 KB)
+- predkolenia.png (664 KB)
+
+Použite: https://squoosh.app/
+Alebo: cwebp -q 80 input.png -o output.webp
+
+═══════════════════════════════════════════
+

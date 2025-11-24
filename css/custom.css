@@ -1145,7 +1145,7 @@ body.menu-open{
 .hero{
 	position: relative;
 	background: linear-gradient(135deg, rgba(211, 76, 125, 0.05) 0%, rgba(247, 228, 231, 0.2) 50%, rgba(211, 76, 125, 0.05) 100%),
-				url('../images/diamanty.png'),
+				url('../images/diamanty.webp'),
 				url('../images/hero-bg-shape.svg');
 	background-repeat: no-repeat, no-repeat, no-repeat;
 	background-position: top center, center center, top center;
@@ -1161,7 +1161,7 @@ body.menu-open{
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: url('../images/diamanty.png') no-repeat center center;
+	background: url('../images/diamanty.webp') no-repeat center center;
 	background-size: cover;
 	opacity: 0.08;
 	z-index: 0;
@@ -1177,20 +1177,6 @@ body.menu-open{
 	bottom: 0;
 	background: rgba(255, 255, 255, 0.85);
 	z-index: 1;
-}
-
-.hero::after{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: url('../images/diamanty.png') no-repeat center center;
-	background-size: cover;
-	opacity: 0.08;
-	z-index: 0;
-	pointer-events: none;
 }
 
 .hero .container{
@@ -1527,10 +1513,6 @@ body.menu-open{
 	gap: 20px 30px;
 }
 
-.about-experience-list,
-.about-experience-image{
-	
-}
 
 .about-experience-list ul{
 	list-style: none;
@@ -1998,7 +1980,7 @@ body.menu-open{
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: url('../images/diamanty.png') no-repeat center center;
+	background: url('../images/diamanty.webp') no-repeat center center;
 	background-size: cover;
 	opacity: 0.03;
 	z-index: 0;
@@ -2256,7 +2238,7 @@ body.menu-open{
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: url('../images/diamanty.png') no-repeat center center;
+	background: url('../images/diamanty.webp') no-repeat center center;
 	background-size: cover;
 	opacity: 0.05;
 	z-index: 0;
@@ -2389,7 +2371,7 @@ body.menu-open{
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: url('../images/team.png') no-repeat center right;
+	background: url('../images/team.webp') no-repeat center right;
 	background-size: cover;
 	opacity: 0.15;
 	z-index: 0;
@@ -3215,7 +3197,7 @@ body.menu-open{
 .page-header{
     position: relative;
 	background: linear-gradient(135deg, rgba(211, 76, 125, 0.05) 0%, rgba(247, 228, 231, 0.2) 50%, rgba(211, 76, 125, 0.05) 100%),
-				url('../images/diamanty.png'),
+				url('../images/diamanty.webp'),
 				url('../images/page-header-bg.svg');
 	background-repeat: no-repeat, no-repeat, no-repeat;
 	background-position: top center, center center, top center;
@@ -5373,7 +5355,7 @@ body.menu-open{
 }
 
 .conatct-us-form{
-	padding: 50px 0 100px;
+	padding: 0 0 100px;
 }
 
 .contact-form{
@@ -5414,12 +5396,14 @@ body.menu-open{
 
 .google-map-iframe{
 	height: 100%;
+	min-height: 600px;
 	border-radius: 0 40px 40px 0;
 	overflow: hidden;
 }
 
 .google-map-iframe iframe{
 	height: 100%;
+	min-height: 600px;
 	width: 100%;
 }
 
@@ -6708,7 +6692,7 @@ body.menu-open{
 	}
 
 	.conatct-us-form{
-		padding: 25px 0 50px;
+		padding: 0 0 50px;
 	}
 
 	.contact-form{
@@ -6723,11 +6707,13 @@ body.menu-open{
 
 	.google-map-iframe{
 		height: auto;
+		min-height: 500px;
 		border-radius: 0 0 26px 26px;
 	}
 
 	.google-map-iframe iframe{
-		height: 400px;
+		height: 500px;
+		min-height: 500px;
 	}
 
 	.page-book-appointment{

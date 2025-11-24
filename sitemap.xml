@@ -6,7 +6,7 @@
     
     <!-- Homepage -->
     <url>
-        <loc>https://hbclinic.sk/</loc>
+        <loc>https://epilaciakosice.sk/</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -14,68 +14,39 @@
     
     <!-- Main pages -->
     <url>
-        <loc>https://hbclinic.sk/o-nas.html</loc>
+        <loc>https://epilaciakosice.sk/o-nas.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://hbclinic.sk/sluzby.html</loc>
+        <loc>https://epilaciakosice.sk/sluzby.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://hbclinic.sk/cennik.html</loc>
+        <loc>https://epilaciakosice.sk/cennik.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://hbclinic.sk/kontakt.html</loc>
+        <loc>https://epilaciakosice.sk/kontakt.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://hbclinic.sk/laserova-epilacia.html</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
     
     <!-- Privacy Policy -->
     <url>
-        <loc>https://hbclinic.sk/ochrana-osobnych-udajov.html</loc>
+        <loc>https://epilaciakosice.sk/ochrana-osobnych-udajov.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
-    </url>
-    
-    <!-- Alternative homepage versions (lower priority) -->
-    <url>
-        <loc>https://hbclinic.sk/index-slider.html</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://hbclinic.sk/index-image.html</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://hbclinic.sk/index-video.html</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
     </url>
     
 </urlset>

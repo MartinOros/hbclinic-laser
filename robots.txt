@@ -7,16 +7,13 @@ Disallow: /form-appointment.php
 
 # Allow all important pages
 Allow: /index.html
-Allow: /index-slider.html
-Allow: /index-image.html
-Allow: /index-video.html
 Allow: /o-nas.html
 Allow: /sluzby.html
 Allow: /cennik.html
 Allow: /kontakt.html
-Allow: /laserova-epilacia.html
 Allow: /ochrana-osobnych-udajov.html
+Allow: /404.html
 
 # Sitemap location
-Sitemap: https://hbclinic.sk/sitemap.xml
+Sitemap: https://epilaciakosice.sk/sitemap.xml
 

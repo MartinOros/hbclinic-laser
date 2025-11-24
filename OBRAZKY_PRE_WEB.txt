@@ -1,0 +1,111 @@
+===========================================
+ZOZNAM OBRÁZKOV PRE UPLOAD NA WEB
+===========================================
+
+📁 Všetky obrázky musia byť v priečinku: images/
+
+═══════════════════════════════════════════
+📸 WEBP OBRÁZKY (optimalizované):
+═══════════════════════════════════════════
+
+✅ diamanty.webp
+✅ imtim_brazil_damsky.webp
+✅ imtim_brazil_pansky.webp
+✅ legs.webp
+✅ new_secon_section.webp
+✅ podpazusie.webp
+✅ sebavedoma_krasa.webp
+✅ sedacia_cast.webp
+✅ sija.webp
+✅ sluzby_banner.webp
+
+═══════════════════════════════════════════
+🖼️ PNG OBRÁZKY:
+═══════════════════════════════════════════
+
+✅ 404-error-img.png
+✅ 7d9ea3_6ab8012b5e1c47db8d464149d598b6f4~mv2 1.png
+✅ back.png
+✅ brada.png
+✅ brazil_8osetreni 1.png
+✅ brucho.png
+✅ chrbty_ruk.png
+✅ favicon.png
+✅ hb-clinic-logo (1).png
+✅ hb-clinic-logo-resize.png
+✅ horna_pera.png
+✅ hurdnik.png
+✅ kontakt-banner.png
+✅ krk.png
+✅ landing_laserove_odstranenie-chlpkov_zeny 1.png
+✅ lica.png
+✅ o-nas.png
+✅ okolie_bradaviek.png
+✅ plecia.png
+✅ podpazusie_8osetreni 1.png
+✅ predkolenia.png
+✅ predlaktie.png
+✅ ramena.png
+✅ ruky_cele.png
+✅ stehna.png
+✅ team.png
+✅ testimonials-bg-shape.png
+✅ tvar_cela.png
+✅ imtim_bikiny.png
+
+═══════════════════════════════════════════
+🖼️ JPG OBRÁZKY:
+═══════════════════════════════════════════
+
+✅ hero-bg.jpg
+✅ prices.jpg
+✅ prices.webp (voliteľné, ak chcete použiť webp)
+
+═══════════════════════════════════════════
+🎨 SVG IKONY A GRAFIKA:
+═══════════════════════════════════════════
+
+✅ arrow-primary.svg
+✅ arrow-text.svg
+✅ arrow-white.svg
+✅ faq-dot-img.svg
+✅ hero-bg-shape.svg
+✅ hero-image-bg-star.svg
+✅ icon-blockquote.svg
+✅ icon-clock.svg
+✅ icon-google.svg
+✅ icon-how-work-step-1.svg
+✅ icon-how-work-step-2.svg
+✅ icon-how-work-step-3.svg
+✅ icon-how-work-step-4.svg
+✅ icon-location.svg
+✅ icon-phone.svg
+✅ icon-sub-heading.svg
+✅ page-header-bg.svg
+✅ why-choose-bg-shape.svg
+✅ appointment-bg-shape.svg
+✅ approach-bg-shape.svg
+✅ journey-bg-shape.svg
+
+═══════════════════════════════════════════
+📊 SÚHRN:
+═══════════════════════════════════════════
+
+• WebP obrázky: 10 súborov
+• PNG obrázky: 30 súborov
+• JPG obrázky: 2-3 súbory
+• SVG ikony: 21 súborov
+
+CELKOM: ~63-64 súborov
+
+═══════════════════════════════════════════
+⚠️ DÔLEŽITÉ POZNÁMKY:
+═══════════════════════════════════════════
+
+1. Všetky obrázky musia byť v priečinku images/
+2. Zachovajte presné názvy súborov (vrátane medzier a špeciálnych znakov)
+3. WebP obrázky sú optimalizované - používajte ich namiesto PNG
+4. SVG súbory sú vektorové - zachovajte ich formát
+5. Favicon a logo sú kritické - musia byť nahrané
+
+═══════════════════════════════════════════
