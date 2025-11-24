@@ -64,3 +64,22 @@
 </IfModule>
 FileETag None
 
+# Remove .html extension from URLs
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirect .html to non-.html (301 permanent redirect)
+    RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+    RewriteRule ^ /%1? [NC,L,R=301]
+    
+    # Add .html extension internally
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+    
+    # Redirect index.html to root
+    RewriteCond %{THE_REQUEST} /index\.html [NC]
+    RewriteRule ^index\.html$ / [NC,L,R=301]
+</IfModule>
+

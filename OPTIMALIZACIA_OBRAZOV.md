@@ -58,3 +58,4 @@
 - **Zlepšenie**: 80-90% zmenšenie veľkosti
 - **LCP zlepšenie**: Z 70s na < 3s
 
+

@@ -14,28 +14,28 @@
     
     <!-- Main pages -->
     <url>
-        <loc>https://epilaciakosice.sk/o-nas.html</loc>
+        <loc>https://epilaciakosice.sk/o-nas</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://epilaciakosice.sk/sluzby.html</loc>
+        <loc>https://epilaciakosice.sk/sluzby</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://epilaciakosice.sk/cennik.html</loc>
+        <loc>https://epilaciakosice.sk/cennik</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://epilaciakosice.sk/kontakt.html</loc>
+        <loc>https://epilaciakosice.sk/kontakt</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -43,7 +43,7 @@
     
     <!-- Privacy Policy -->
     <url>
-        <loc>https://epilaciakosice.sk/ochrana-osobnych-udajov.html</loc>
+        <loc>https://epilaciakosice.sk/ochrana-osobnych-udajov</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
