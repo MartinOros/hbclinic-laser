@@ -7490,3 +7490,218 @@ body.menu-open{
 		align-items: center;
 	}
 }
+
+/************************************/
+/***      Chat Bubble CSS          ***/
+/************************************/
+.chat-bubble-container{
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	z-index: 9999;
+	font-family: 'Sora', sans-serif;
+}
+
+.chat-bubble-button{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: var(--accent-color);
+	border: none;
+	color: var(--white-color);
+	font-size: 24px;
+	cursor: pointer;
+	box-shadow: 0 4px 12px rgba(211, 76, 125, 0.4);
+	transition: all 0.3s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 10001;
+}
+
+.chat-bubble-button:hover{
+	background: #b83d6a;
+	transform: scale(1.1);
+	box-shadow: 0 6px 20px rgba(211, 76, 125, 0.6);
+}
+
+.chat-bubble-button.active{
+	background: #b83d6a;
+}
+
+/* Change chat bubble color when menu is open */
+body.menu-open .chat-bubble-button{
+	background-color: var(--white-color);
+	color: var(--accent-color);
+}
+
+body.menu-open .chat-bubble-button:hover{
+	background-color: #f0f0f0;
+	color: var(--accent-color);
+}
+
+.chat-window{
+	position: absolute;
+	bottom: 80px;
+	right: 0;
+	width: 350px;
+	background: var(--white-color);
+	border-radius: 12px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(20px) scale(0.9);
+	transition: all 0.3s ease-in-out;
+	overflow: hidden;
+}
+
+.chat-window.active{
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0) scale(1);
+}
+
+.chat-header{
+	background: var(--accent-color);
+	color: var(--white-color);
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.chat-header h3{
+	margin: 0;
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--white-color);
+}
+
+.chat-close{
+	background: transparent;
+	border: none;
+	color: var(--white-color);
+	font-size: 20px;
+	cursor: pointer;
+	padding: 0;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+}
+
+.chat-close:hover{
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.chat-body{
+	padding: 20px;
+}
+
+.chat-body .form-group{
+	margin-bottom: 15px;
+}
+
+.chat-body .form-group label{
+	display: block;
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--text-color);
+}
+
+.chat-body .form-group input,
+.chat-body .form-group textarea{
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #e0e0e0;
+	border-radius: 6px;
+	font-size: 14px;
+	font-family: 'Sora', sans-serif;
+	transition: all 0.3s ease-in-out;
+	box-sizing: border-box;
+}
+
+.chat-body .form-group input:focus,
+.chat-body .form-group textarea:focus{
+	outline: none;
+	border-color: var(--accent-color);
+	box-shadow: 0 0 0 3px rgba(211, 76, 125, 0.1);
+}
+
+.chat-body .form-group textarea{
+	resize: vertical;
+	min-height: 100px;
+}
+
+.chat-submit-btn{
+	width: 100%;
+	padding: 12px;
+	background: var(--accent-color);
+	color: var(--white-color);
+	border: none;
+	border-radius: 6px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	font-family: 'Sora', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.chat-submit-btn:hover:not(:disabled){
+	background: #b83d6a;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(211, 76, 125, 0.4);
+}
+
+.chat-submit-btn:disabled{
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+.chat-message{
+	margin-top: 15px;
+	padding: 12px;
+	border-radius: 6px;
+	font-size: 14px;
+	display: none;
+}
+
+.chat-message.success{
+	display: block;
+	background: #d4edda;
+	color: #155724;
+	border: 1px solid #c3e6cb;
+}
+
+.chat-message.error{
+	display: block;
+	background: #f8d7da;
+	color: #721c24;
+	border: 1px solid #f5c6cb;
+}
+
+.chat-message i{
+	margin-right: 8px;
+}
+
+@media only screen and (max-width: 480px){
+	.chat-window{
+		width: calc(100vw - 60px);
+		right: 0;
+	}
+	
+	.chat-bubble-button{
+		width: 55px;
+		height: 55px;
+		font-size: 22px;
+	}
+}

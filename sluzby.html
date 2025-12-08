@@ -797,5 +797,49 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+
+    <!-- Chat Bubble Start -->
+    <div class="chat-bubble-container" id="chatBubble">
+        <button class="chat-bubble-button" id="chatButton" aria-label="Otvoriť chat">
+            <i class="fa-solid fa-comments"></i>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Napíšte nám</h3>
+                <button class="chat-close" id="chatClose" aria-label="Zatvoriť chat">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-body">
+                <form id="chatForm">
+                    <input type="hidden" name="form_timestamp" id="chatFormTimestamp">
+                    <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+                    <div class="form-group">
+                        <label for="chatName">Meno *</label>
+                        <input type="text" id="chatName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="chatEmail">E-mail *</label>
+                        <input type="email" id="chatEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="chatMessageText">Správa *</label>
+                        <textarea id="chatMessageText" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="chat-submit-btn">
+                        <span class="btn-text">Odoslať</span>
+                        <span class="btn-loader" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                <div class="chat-message" id="chatMessageDisplay"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Google reCAPTCHA v3 (for chat form spam protection) -->
+    <script>
+        window.recaptchaSiteKey = '6LfV8SQsAAAAADW7VAed6cgWr3HZG3Iy4eNi0vj1';
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+    <script src="js/chat-bubble.js"></script>
 </body>
 </html>
