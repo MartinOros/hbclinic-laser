@@ -566,7 +566,7 @@ header.main-header .header-sticky.active:not(.hide){
 }
 
 .custom-hamburger{
-	background: var(--accent-color);
+	background: transparent;
 	border: none;
 	cursor: pointer;
 	display: flex;
@@ -586,10 +586,6 @@ header.main-header .header-sticky.active:not(.hide){
 	top: 30px;
 	right: 40px;
 	z-index: 1001;
-}
-
-.hero-hamburger span{
-	background: var(--white-color);
 }
 
 .header-hamburger{
@@ -620,6 +616,18 @@ header.main-header .header-sticky.active:not(.hide){
 	transition: all 0.3s ease-in-out;
 }
 
+.hero-hamburger.custom-hamburger span{
+	background: var(--accent-color);
+}
+
+.custom-hamburger:hover span{
+	background: #000000;
+}
+
+.hero-hamburger.custom-hamburger:hover span{
+	background: #000000;
+}
+
 .custom-hamburger.active span:nth-child(1){
 	transform: rotate(45deg) translate(0, 0);
 	position: absolute;
@@ -648,7 +656,7 @@ header.main-header .header-sticky.active:not(.hide){
 	left: 0;
 	width: 100%;
 	height: 100vh;
-	background: rgba(0, 0, 0, 0.95);
+	background: rgba(211, 76, 125, 0.95);
 	z-index: 1000;
 	opacity: 0;
 	visibility: hidden;
@@ -697,7 +705,7 @@ header.main-header .header-sticky.active:not(.hide){
 }
 
 .custom-menu-list a:hover{
-	color: var(--accent-color);
+	color: #000000;
 	transform: translateX(10px);
 }
 
@@ -708,7 +716,7 @@ header.main-header .header-sticky.active:not(.hide){
 	height: 2px;
 	bottom: -5px;
 	left: 0;
-	background: var(--accent-color);
+	background: #000000;
 	transition: width 0.3s ease-in-out;
 }
 
@@ -3200,7 +3208,13 @@ body.menu-open{
 }
 
 .footer-privacy-policy ul li a{
-	color: inherit;
+	color: var(--white-color);
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+}
+
+.footer-privacy-policy ul li a:hover{
+	color: var(--accent-color);
 }
 
 /************************************/

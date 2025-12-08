@@ -5,15 +5,11 @@ Allow: /
 Disallow: /form-process.php
 Disallow: /form-appointment.php
 
-# Allow all important pages
-Allow: /index.html
-Allow: /o-nas.html
-Allow: /sluzby.html
-Allow: /cennik.html
-Allow: /kontakt.html
-Allow: /ochrana-osobnych-udajov.html
-Allow: /404.html
+# Disallow Google verification file
+Disallow: /google4ac22dc46b32cad5.html
+
+# Disallow 404 error page from indexing
+Disallow: /404.html
 
 # Sitemap location
 Sitemap: https://epilaciakosice.sk/sitemap.xml
-
