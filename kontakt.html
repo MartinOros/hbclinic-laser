@@ -95,16 +95,6 @@
 		}
 	}
 	</script>
-	<!-- Google reCAPTCHA v3 (Optional - Follow official docs: https://developers.google.com/recaptcha/docs/v3) -->
-	<!-- 
-	To enable reCAPTCHA v3:
-	1. Get your keys from https://www.google.com/recaptcha/admin
-	2. Uncomment the script below and replace YOUR_SITE_KEY with your site key
-	3. In js/function.js, set recaptchaSiteKey = 'YOUR_SITE_KEY'
-	4. In form-process.php, set $recaptchaSecret = 'YOUR_SECRET_KEY'
-	
-	<script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
-	-->
 </head>
 <body>
 
@@ -453,7 +443,10 @@
         <!-- Chat Window -->
         <div class="chat-window" id="chatWindow">
             <div class="chat-header">
-                <h3>Napíšte nám</h3>
+                <h3>
+                    <span class="chat-online-indicator"></span>
+                    Napíšte nám
+                </h3>
                 <button class="chat-close" id="chatClose" aria-label="Zatvoriť chat">
                     <i class="fa-solid fa-times"></i>
                 </button>
@@ -478,6 +471,13 @@
                         <textarea id="chatMessageText" name="message" rows="4" required></textarea>
                     </div>
                     
+                    <div class="form-group">
+                        <label class="chat-checkbox-label">
+                            <input type="checkbox" id="chatPrivacyConsent" name="privacy_consent" required>
+                            <span>Súhlasím s <a href="ochrana-osobnych-udajov.html" target="_blank">ochranou osobných údajov</a> *</span>
+                        </label>
+                    </div>
+                    
                     <button type="submit" class="chat-submit-btn">
                         <span class="btn-text">Odoslať</span>
                         <span class="btn-loader" style="display:none;">
@@ -491,11 +491,6 @@
     </div>
     <!-- Chat Bubble End -->
 
-    <!-- Google reCAPTCHA v3 (for chat form spam protection) -->
-    <script>
-        window.recaptchaSiteKey = '6LfV8SQsAAAAADW7VAed6cgWr3HZG3Iy4eNi0vj1';
-    </script>
-    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
     <script src="js/chat-bubble.js"></script>
 </body>
 </html>

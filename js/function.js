@@ -278,7 +278,6 @@
 	/* Contact form validation */
 	var $contactform = $("#contactForm");
 	var formStartTime = Date.now();
-	var recaptchaSiteKey = ''; // Set this if using reCAPTCHA v3: 'YOUR_SITE_KEY'
 	
 	// Set form timestamp when page loads
 	$(document).ready(function() {
@@ -295,20 +294,8 @@
 				return false;
 			}
 			
-			// If reCAPTCHA v3 is enabled, execute it before submitting
-			if (typeof grecaptcha !== 'undefined' && recaptchaSiteKey) {
-				grecaptcha.ready(function() {
-					grecaptcha.execute(recaptchaSiteKey, {action: 'submit'}).then(function(token) {
-						// Set the token in the form
-						$("#g-recaptcha-response").val(token);
-						// Now submit the form
-						submitForm();
-					});
-				});
-			} else {
-				// Submit without reCAPTCHA
-				submitForm();
-			}
+			// Submit form directly (basic spam protection only)
+			submitForm();
 		}
 	});
 

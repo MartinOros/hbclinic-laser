@@ -141,10 +141,7 @@ define('SMTP_FROM_NAME', 'HB Clinic');
 // Recipient email (TESTING - change to info@hbclinic.sk for production)
 define('TO_EMAIL', 'info@hbclinic.sk');
 
-// Google reCAPTCHA v3 Configuration
-define('RECAPTCHA_ENABLED', true); // reCAPTCHA is enabled
-define('RECAPTCHA_SECRET_KEY', '6LfV8SQsAAAAAL0QxkdYCnWriLjLIBjveIyw15Wp'); // Secret key
-define('RECAPTCHA_SCORE_THRESHOLD', 0.5); // Score threshold (0.0 = bot, 1.0 = human)
+// reCAPTCHA disabled - using basic spam protection only
 
 // ============================================
 // Main execution wrapped in try-catch
@@ -197,65 +194,18 @@ try {
             }
         }
         
-        // Google reCAPTCHA v3 verification (if enabled)
-        if (RECAPTCHA_ENABLED) {
-            if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
-                $recaptchaResponse = $_POST['g-recaptcha-response'];
-                $expectedAction = 'chat_submit'; // Action name for chat form
-                
-                $verifyURL = 'https://www.google.com/recaptcha/api/siteverify';
-                $data = array(
-                    'secret' => RECAPTCHA_SECRET_KEY,
-                    'response' => $recaptchaResponse,
-                    'remoteip' => $_SERVER['REMOTE_ADDR']
-                );
-                
-                $options = array(
-                    'http' => array(
-                        'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-                        'method' => 'POST',
-                        'content' => http_build_query($data),
-                        'timeout' => 10
-                    )
-                );
-                
-                $context = stream_context_create($options);
-                $result = @file_get_contents($verifyURL, false, $context);
-                
-                if ($result === false) {
-                    error_log("reCAPTCHA verification failed: Could not connect to Google");
-                    return false; // Fail closed - require reCAPTCHA to work
-                }
-                
-                $resultJson = json_decode($result);
-                
-                // Verify reCAPTCHA response
-                if (!$resultJson || !isset($resultJson->success) || !$resultJson->success) {
-                    error_log("reCAPTCHA verification failed: Invalid token");
-                    return false;
-                }
-                
-                // Verify the action name matches
-                if (!isset($resultJson->action) || $resultJson->action !== $expectedAction) {
-                    error_log("reCAPTCHA action mismatch: expected {$expectedAction}, got " . (isset($resultJson->action) ? $resultJson->action : 'none'));
-                    return false;
-                }
-                
-                // Check score (0.0 = bot, 1.0 = human)
-                if (!isset($resultJson->score) || $resultJson->score < RECAPTCHA_SCORE_THRESHOLD) {
-                    error_log("reCAPTCHA score too low: " . (isset($resultJson->score) ? $resultJson->score : 'none') . " (threshold: " . RECAPTCHA_SCORE_THRESHOLD . ")");
-                    return false;
-                }
-                
-                // Optional: Verify hostname matches your domain
-                $expectedHostname = $_SERVER['HTTP_HOST'];
-                if (isset($resultJson->hostname) && $resultJson->hostname !== $expectedHostname) {
-                    // Log but don't block - might be legitimate (subdomains, etc.)
-                    error_log("reCAPTCHA hostname mismatch: expected {$expectedHostname}, got {$resultJson->hostname}");
-                }
-            } else {
-                // reCAPTCHA is enabled but token is missing
-                error_log("reCAPTCHA enabled but token missing");
+        // Basic spam pattern detection
+        $email = isset($_POST['email']) ? strtolower($_POST['email']) : '';
+        $message = isset($_POST['message']) ? strtolower($_POST['message']) : '';
+        
+        $spamPatterns = array(
+            '/\b(viagra|cialis|casino|poker|loan|mortgage|credit|bitcoin|crypto)\b/i',
+            '/\b(http|https|www\.)\b/i', // URLs in message
+        );
+        
+        foreach ($spamPatterns as $pattern) {
+            if (preg_match($pattern, $message) || preg_match($pattern, $email)) {
+                error_log("Suspicious chat form submission detected");
                 return false;
             }
         }
@@ -279,7 +229,12 @@ try {
     if (empty($name) || empty($email) || empty($message)) {
         sendJsonResponse(false, 'Prosím vyplňte všetky povinné polia');
     }
-
+    
+    // Validate privacy consent checkbox
+    if (!isset($_POST['privacy_consent']) || $_POST['privacy_consent'] !== 'on') {
+        sendJsonResponse(false, 'Prosím, súhlaste s ochranou osobných údajov');
+    }
+    
     // Validate email format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         sendJsonResponse(false, 'Neplatná emailová adresa');

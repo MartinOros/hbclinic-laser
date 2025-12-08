@@ -39,72 +39,19 @@ function validateBotProtection() {
         }
     }
     
-    // 3. reCAPTCHA v3 verification (if enabled)
-    // Reference: https://developers.google.com/recaptcha/docs/v3
-    if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
-        $recaptchaSecret = 'YOUR_RECAPTCHA_SECRET_KEY'; // Replace with your secret key from https://www.google.com/recaptcha/admin
-        $recaptchaResponse = $_POST['g-recaptcha-response'];
-        $expectedAction = 'submit'; // Must match the action used in JavaScript
-        
-        $verifyURL = 'https://www.google.com/recaptcha/api/siteverify';
-        $data = array(
-            'secret' => $recaptchaSecret,
-            'response' => $recaptchaResponse,
-            'remoteip' => $_SERVER['REMOTE_ADDR']
-        );
-        
-        $options = array(
-            'http' => array(
-                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method' => 'POST',
-                'content' => http_build_query($data)
-            )
-        );
-        
-        $context = stream_context_create($options);
-        $result = file_get_contents($verifyURL, false, $context);
-        $resultJson = json_decode($result);
-        
-        // Verify reCAPTCHA response according to official documentation
-        // Check: success, score (0.0-1.0), and action name
-        if (!$resultJson->success) {
-            return false; // Invalid token or request failed
-        }
-        
-        // Verify the action name matches (important security check)
-        if (!isset($resultJson->action) || $resultJson->action !== $expectedAction) {
-            return false; // Action mismatch - potential security issue
-        }
-        
-        // Check score (0.0 = bot, 1.0 = human)
-        // Default threshold is 0.5, adjust based on your site's traffic analysis
-        $scoreThreshold = 0.5;
-        if (!isset($resultJson->score) || $resultJson->score < $scoreThreshold) {
-            return false; // Score too low - likely a bot
-        }
-        
-        // Optional: Verify hostname matches your domain
-        $expectedHostname = $_SERVER['HTTP_HOST'];
-        if (isset($resultJson->hostname) && $resultJson->hostname !== $expectedHostname) {
-            // Log but don't block - might be legitimate (subdomains, etc.)
-            error_log("reCAPTCHA hostname mismatch: expected {$expectedHostname}, got {$resultJson->hostname}");
-        }
-    }
-    
-    // 4. Basic spam detection - check for common spam patterns
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $message = isset($_POST['message']) ? $_POST['message'] : '';
+    // 3. Basic spam pattern detection
+    $email = isset($_POST['email']) ? strtolower($_POST['email']) : '';
+    $message = isset($_POST['message']) ? strtolower($_POST['message']) : '';
     
     $spamPatterns = array(
-        '/\b(viagra|cialis|casino|poker|loan|mortgage|credit)\b/i',
+        '/\b(viagra|cialis|casino|poker|loan|mortgage|credit|bitcoin|crypto)\b/i',
         '/\b(http|https|www\.)\b/i', // URLs in message
-        '/\b\d{10,}\b/', // Long number sequences
     );
     
     foreach ($spamPatterns as $pattern) {
         if (preg_match($pattern, $message) || preg_match($pattern, $email)) {
-            // Log suspicious activity but don't block (might be false positive)
             error_log("Suspicious form submission detected: " . $email);
+            return false; // Block spam
         }
     }
     

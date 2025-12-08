@@ -440,7 +440,10 @@
         </button>
         <div class="chat-window" id="chatWindow">
             <div class="chat-header">
-                <h3>Napíšte nám</h3>
+                <h3>
+                    <span class="chat-online-indicator"></span>
+                    Napíšte nám
+                </h3>
                 <button class="chat-close" id="chatClose" aria-label="Zatvoriť chat">
                     <i class="fa-solid fa-times"></i>
                 </button>
@@ -461,6 +464,14 @@
                         <label for="chatMessageText">Správa *</label>
                         <textarea id="chatMessageText" name="message" rows="4" required></textarea>
                     </div>
+                    
+                    <div class="form-group">
+                        <label class="chat-checkbox-label">
+                            <input type="checkbox" id="chatPrivacyConsent" name="privacy_consent" required>
+                            <span>Súhlasím s <a href="ochrana-osobnych-udajov.html" target="_blank">ochranou osobných údajov</a> *</span>
+                        </label>
+                    </div>
+                    
                     <button type="submit" class="chat-submit-btn">
                         <span class="btn-text">Odoslať</span>
                         <span class="btn-loader" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i></span>
@@ -470,11 +481,6 @@
             </div>
         </div>
     </div>
-    <!-- Google reCAPTCHA v3 (for chat form spam protection) -->
-    <script>
-        window.recaptchaSiteKey = '6LfV8SQsAAAAADW7VAed6cgWr3HZG3Iy4eNi0vj1';
-    </script>
-    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
     <script src="js/chat-bubble.js"></script>
 </body>
 </html>

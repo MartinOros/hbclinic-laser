@@ -35,14 +35,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Also close when form is successfully submitted (after auto-close delay)
+    // This is handled in the form submission success handler
+    
     // Form submission
     chatForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        // Validate privacy consent checkbox
+        const privacyConsent = document.getElementById('chatPrivacyConsent');
+        if (!privacyConsent || !privacyConsent.checked) {
+            chatMessageDisplay.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> Prosím, súhlaste s ochranou osobných údajov.';
+            chatMessageDisplay.className = 'chat-message error';
+            return false;
+        }
+        
         const submitBtn = chatForm.querySelector('.chat-submit-btn');
         const btnText = submitBtn.querySelector('.btn-text');
         const btnLoader = submitBtn.querySelector('.btn-loader');
-        const recaptchaInput = document.getElementById('chatRecaptchaResponse');
         
         // Show loading
         submitBtn.disabled = true;
@@ -54,15 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get form data
         const formData = new FormData(chatForm);
         
-        // Google reCAPTCHA v3 (if enabled)
-        const recaptchaSiteKey = window.recaptchaSiteKey || '';
+        console.log('Submitting form...');
+        // Send AJAX request - use absolute path to ensure it works from any page
+        const formAction = '/chat-form.php';
         
-        const submitForm = function() {
-            console.log('Submitting form...');
-            // Send AJAX request - use absolute path to ensure it works from any page
-            const formAction = '/chat-form.php';
-            
-            fetch(formAction, {
+        fetch(formAction, {
             method: 'POST',
             body: formData,
             headers: {
@@ -119,53 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
             btnText.style.display = 'inline-block';
             btnLoader.style.display = 'none';
         });
-        };
-        
-        // Execute reCAPTCHA if enabled (following official docs: https://developers.google.com/recaptcha/docs/v3)
-        if (recaptchaSiteKey) {
-            // Use grecaptcha.ready() to ensure library is loaded (as per official docs)
-            if (typeof grecaptcha !== 'undefined') {
-                grecaptcha.ready(function() {
-                    grecaptcha.execute(recaptchaSiteKey, {action: 'chat_submit'}).then(function(token) {
-                        // Add token to form data immediately
-                        if (recaptchaInput) {
-                            recaptchaInput.value = token;
-                        }
-                        // Submit form with token
-                        submitForm();
-                    }).catch(function(error) {
-                        console.error('reCAPTCHA execution error:', error);
-                        // Submit anyway - server will handle missing token
-                        submitForm();
-                    });
-                });
-            } else {
-                // If grecaptcha is not available, wait a bit and try again
-                // This handles cases where script loads after our code
-                setTimeout(function() {
-                    if (typeof grecaptcha !== 'undefined') {
-                        grecaptcha.ready(function() {
-                            grecaptcha.execute(recaptchaSiteKey, {action: 'chat_submit'}).then(function(token) {
-                                if (recaptchaInput) {
-                                    recaptchaInput.value = token;
-                                }
-                                submitForm();
-                            }).catch(function(error) {
-                                console.error('reCAPTCHA execution error:', error);
-                                submitForm();
-                            });
-                        });
-                    } else {
-                        // reCAPTCHA failed to load - submit without it
-                        console.warn('reCAPTCHA not available - submitting without token');
-                        submitForm();
-                    }
-                }, 500);
-            }
-        } else {
-            // No reCAPTCHA configured, submit directly
-            submitForm();
-        }
     });
 });
 

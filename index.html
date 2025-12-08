@@ -886,7 +886,10 @@
         <!-- Chat Window -->
         <div class="chat-window" id="chatWindow">
             <div class="chat-header">
-                <h3>Napíšte nám</h3>
+                <h3>
+                    <span class="chat-online-indicator"></span>
+                    Napíšte nám
+                </h3>
                 <button class="chat-close" id="chatClose" aria-label="Zatvoriť chat">
                     <i class="fa-solid fa-times"></i>
                 </button>
@@ -895,7 +898,6 @@
                 <form id="chatForm">
                     <input type="hidden" name="form_timestamp" id="chatFormTimestamp">
                     <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
-                    <input type="hidden" name="g-recaptcha-response" id="chatRecaptchaResponse">
                     
                     <div class="form-group">
                         <label for="chatName">Meno *</label>
@@ -912,6 +914,13 @@
                         <textarea id="chatMessageText" name="message" rows="4" required></textarea>
                     </div>
                     
+                    <div class="form-group">
+                        <label class="chat-checkbox-label">
+                            <input type="checkbox" id="chatPrivacyConsent" name="privacy_consent" required>
+                            <span>Súhlasím s <a href="ochrana-osobnych-udajov.html" target="_blank">ochranou osobných údajov</a> *</span>
+                        </label>
+                    </div>
+                    
                     <button type="submit" class="chat-submit-btn">
                         <span class="btn-text">Odoslať</span>
                         <span class="btn-loader" style="display:none;">
@@ -925,12 +934,6 @@
     </div>
     <!-- Chat Bubble End -->
 
-    <!-- Google reCAPTCHA v3 (for chat form spam protection) -->
-    <!-- Load reCAPTCHA API before chat-bubble.js to avoid race conditions -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfV8SQsAAAAADW7VAed6cgWr3HZG3Iy4eNi0vj1"></script>
-    <script>
-        window.recaptchaSiteKey = '6LfV8SQsAAAAADW7VAed6cgWr3HZG3Iy4eNi0vj1';
-    </script>
     <script src="js/chat-bubble.js"></script>
 </body>
 </html>
