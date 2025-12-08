@@ -7480,3 +7480,13 @@ body.menu-open{
         max-width: 80%;
     }
 }
+
+/* Large screens - increase hero section height */
+@media only screen and (min-width: 1690px){
+	.hero{
+		min-height: 100vh;
+		padding: 250px 0;
+		display: flex;
+		align-items: center;
+	}
+}
